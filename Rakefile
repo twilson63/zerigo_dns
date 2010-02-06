@@ -10,7 +10,7 @@ begin
     gem.email = "tom@jackhq.com"
     gem.homepage = "http://github.com/twilson63/zerigo_dns"
     gem.authors = ["Tom Wilson"]
-    gem.add_dependency "active_resource"
+    gem.add_dependency "activeresource"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
