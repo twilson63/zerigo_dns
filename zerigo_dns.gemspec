@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zerigo_dns}
-  s.version = "1.0.4"
+  s.version = "1.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "example/sample.rb",
+     "lib/activeresource-ext.rb",
      "lib/zerigo_dns.rb"
   ]
   s.homepage = %q{http://github.com/twilson63/zerigo_dns}
