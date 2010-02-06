@@ -6,7 +6,7 @@ describe "Zerigo::DNS::Host.update_or_create" do
     Zerigo::DNS::Host.stub!(:find).and_return([])
     Zerigo::DNS::Host.stub!(:create).and_return(:success => true)
     
-    Zerigo::DNS::Host.update_or_create(1, 'www', 'A', '10.10.10.10')[:success].should be_true
+    Zerigo::DNS::Host.update_or_create(1, 'www', 'A', '10.10.10.10', 86400)[:success].should be_true
   end
 
   it 'should update host' do
@@ -20,8 +20,13 @@ describe "Zerigo::DNS::Host.update_or_create" do
     Zerigo::DNS::Host.stub!(:find).and_return([jackhq])
     Zerigo::DNS::Host.stub!(:create).and_return(:success => false)
     
-    Zerigo::DNS::Host.update_or_create(1, 'www', 'A', '10.10.10.10').hostname == 'www'
+    Zerigo::DNS::Host.update_or_create(1, 'www', 'A', '10.10.10.10', 86499).hostname == 'www'
   end
-  
-  
+
+  it 'should find by zone and host' do
+    jackhq = mock('Zerigo::DNS::Host')
+    jackhq.stub!(:hostname).and_return('www')
+    Zerigo::DNS::Host.stub!(:find).and_return([jackhq])
+    Zerigo::DNS::Host.find_by_hostname(1, 'www').hostname == 'www'
+  end
 end

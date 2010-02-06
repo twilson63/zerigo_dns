@@ -18,6 +18,15 @@ describe "Zerigo::DNS::Zone.find_or_create" do
     
     Zerigo::DNS::Zone.find_or_create('example.com').domain == 'example.com'
   end
+
+  it 'should find zone by domain' do
+    jackhq = mock('Zerigo::DNS::Zone')
+    jackhq.stub!(:domain).and_return('example.com')
+    
+    Zerigo::DNS::Zone.stub!(:find).and_return([jackhq])
+    
+    Zerigo::DNS::Zone.find_by_domain('example.com').domain == 'example.com'
+  end
   
   
 end
