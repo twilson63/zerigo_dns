@@ -12,6 +12,8 @@ begin
     gem.authors = ["Tom Wilson"]
     gem.add_dependency "activeresource"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.files = FileList['example/*.rb'] + FileList['lib/**/*.rb'] + ['README.rdoc', 'LICENSE', 'VERSION.yml', 'Rakefile']
+    
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

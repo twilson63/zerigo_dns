@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zerigo_dns}
-  s.version = "1.0.3"
+  s.version = "1.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
@@ -17,16 +17,11 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
-     "LICENSE",
+    "LICENSE",
      "README.rdoc",
      "Rakefile",
-     "VERSION",
      "example/sample.rb",
-     "test/helper.rb",
-     "test/test_zerigo_dns.rb",
-     "zerigo_dns.gemspec"
+     "lib/zerigo_dns.rb"
   ]
   s.homepage = %q{http://github.com/twilson63/zerigo_dns}
   s.rdoc_options = ["--charset=UTF-8"]
