@@ -3,7 +3,7 @@
 
 # First, require the Zerigo DNS library for ActiveResource.
 
-require 'zerigo_ns'
+require 'zerigo_dns'
 
 # All API request require a Zerigo account and an Account API key. We'll set
 # them here for later reference. The 'user' is your regular login email.
@@ -28,7 +28,7 @@ Zerigo::NS::Base.password = 'api_token'
 # eg: zone.default_ttl, not zone.default-ttl
 
 puts '', "Retrieving list of first 20 zones..."
-zones = Zerigo::NS::Zone.find(:all, :params=>{:per_page=>20, :page=>1})
+zones = Zerigo::DNS::Zone.find(:all, :params=>{:per_page=>20, :page=>1})
 
 # Now print a list of those zones
 zones.each do |zone|
@@ -49,7 +49,7 @@ end
 zone = zones.first
 puts '', "Hosts for zone #{zone.domain} (id: #{zone.id})"
 
-hosts = Zerigo::NS::Host.find(:all, :params=>{:zone_id=>zone.id, :per_page=>20, :page=>1})
+hosts = Zerigo::DNS::Host.find(:all, :params=>{:zone_id=>zone.id, :per_page=>20, :page=>1})
 hosts.each do |host|
   puts "  #{host.hostname} (id: #{host.id})"
 end
@@ -62,7 +62,7 @@ end
 # the last request.
 
 puts '', "Loading a single zone..."
-zone = Zerigo::NS::Zone.find(zones.first.id)
+zone = Zerigo::DNS::Zone.find(zones.first.id)
 
 puts "  Loaded zone #{zone.id} (#{zone.domain})"
 
@@ -71,7 +71,7 @@ puts "  Loaded zone #{zone.id} (#{zone.domain})"
 
 puts '', "Loading a non-existent zone..."
 begin
-  zone2 = Zerigo::NS::Zone.find(987654321)
+  zone2 = Zerigo::DNS::Zone.find(987654321)
   puts "  Loaded zone #{zone2.id} (#{zone2.domain})"
 rescue ActiveResource::ResourceNotFound
   puts "  Zone not found"
@@ -85,7 +85,7 @@ puts '', "Creating a random zone that is invalid..."
 now = Time.now.to_i
 vals = {:domain=>"example-#{now}.org", :ns_type=>'not_valid' }
 
-newzone = Zerigo::NS::Zone.create(vals)
+newzone = Zerigo::DNS::Zone.create(vals)
 if newzone.errors.empty?
   puts "  Zone #{newzone.domain} created successfully with id #{newzone.id}."
 else
@@ -99,7 +99,7 @@ puts '', "Fixing and resubmitting that random zone..."
 
 vals[:ns_type] = 'pri_sec' # options for this are 'pri_sec' (the default and most common), 'pri', and 'sec' -- see the API docs for details
 
-newzone = Zerigo::NS::Zone.create(vals)
+newzone = Zerigo::DNS::Zone.create(vals)
 if newzone.errors.empty?
   puts "  Zone #{newzone.domain} created successfully with id #{newzone.id}."
 else
@@ -135,7 +135,7 @@ vals2 = {:hostname=>'www',
 
 # A host has to be assigned to a zone. This is done by including 'zone_id'
 # in the vals2 hash.
-newhost = Zerigo::NS::Host.create(vals2)
+newhost = Zerigo::DNS::Host.create(vals2)
 if newhost.errors.empty?
   puts "  Host #{newhost.hostname} created successfully with id #{newhost.id}."
 else

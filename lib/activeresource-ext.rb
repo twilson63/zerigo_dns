@@ -1,4 +1,4 @@
-require 'activeresource'
+require 'active_resource'
 
 module ActiveResource
   module CaptureHeaders

@@ -43,6 +43,22 @@ module Zerigo
 
   
     class Zone < Base
+      def self.find_or_create(domain)
+        zones = Zerigo::DNS::Zone.find(:all) 
+        zone = nil
+        zones.each do |z|
+          if z.domain == domain
+            zone = z
+            break;
+          end
+        end
+
+        unless zone
+          zone = Zerigo::DNS::Zone.create(:domain=> domain, :ns_type=>'pri_sec')
+        end  
+        zone
+      end
+      
     end
   
     class Host < Base
