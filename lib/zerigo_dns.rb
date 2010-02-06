@@ -72,7 +72,7 @@ module Zerigo
       
       # Find by host name
       def self.find_by_hostname(zone, hostname)
-        hosts = find(:all) 
+        hosts = find(:all, :params=> { :zone_id => zone.id }) 
         host = nil
         hosts.each do |h|
           if h.hostname == hostname
