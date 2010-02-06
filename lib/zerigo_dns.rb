@@ -4,7 +4,7 @@
 require 'activeresource-ext'
 
 module Zerigo
-  module NS
+  module DNS
   
     class Base < ActiveResource::Base
       self.site='http://ns.zerigo.com/api/1.1/'
