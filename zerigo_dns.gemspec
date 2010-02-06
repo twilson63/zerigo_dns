@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zerigo_dns}
-  s.version = "1.0.6"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
@@ -30,7 +30,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Zerigo DNS Gem}
   s.test_files = [
-    "test/helper.rb",
+    "spec/lib/host_spec.rb",
+     "spec/lib/zone_spec.rb",
+     "spec/spec_helper.rb",
+     "test/helper.rb",
      "test/test_zerigo_dns.rb"
   ]
 

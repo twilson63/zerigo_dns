@@ -43,8 +43,9 @@ module Zerigo
 
   
     class Zone < Base
+      # Find or Create Zone
       def self.find_or_create(domain)
-        zones = Zerigo::DNS::Zone.find(:all) 
+        zones = find(:all) 
         zone = nil
         zones.each do |z|
           if z.domain == domain
@@ -54,7 +55,7 @@ module Zerigo
         end
 
         unless zone
-          zone = Zerigo::DNS::Zone.create(:domain=> domain, :ns_type=>'pri_sec')
+          zone = create(:domain=> domain, :ns_type=>'pri_sec')
         end  
         zone
       end
@@ -62,6 +63,37 @@ module Zerigo
     end
   
     class Host < Base
+      
+      # Update or Create Host for a zone
+      def self.update_or_create(zone, hostname, type, data)
+        hosts = find(:all) 
+        host = nil
+        hosts.each do |h|
+          if h.hostname == hostname
+            host = h
+            break;
+          end
+        end
+
+        if host
+          # update
+          host.host_type = type
+          host.data = data
+          host.ttl = 86400
+          host.save
+        else
+          # creatae
+          host = create(
+            :zone_id => zone, 
+            :hostname => hostname,
+            :host_type => type,
+            :data => data,
+            :ttl=>86400
+          )
+        end  
+        host
+      end
+      
     end
 
   end
