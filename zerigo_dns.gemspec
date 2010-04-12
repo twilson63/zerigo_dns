@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zerigo_dns}
-  s.version = "1.1.3"
+  s.version = "1.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
-  s.date = %q{2010-02-06}
+  s.date = %q{2010-04-12}
   s.description = %q{This gem is a resource wrapper of the example provide by zerigo dns}
   s.email = %q{tom@jackhq.com}
   s.extra_rdoc_files = [
