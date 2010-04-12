@@ -1,4 +1,5 @@
 require 'active_resource'
+require 'active_support/core_ext/module'
 
 module ActiveResource
   module CaptureHeaders
