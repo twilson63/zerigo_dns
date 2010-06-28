@@ -21,6 +21,14 @@ Simple Gem that wraps around an active resource for the Zerigo DNS API
     
 Thats it, you should now have a host and url www.happyplace.com pointing to 10.10.10.10
 
+## How to test
+
+    spec ./spec
+    
+## Thanks for contributing
+
+Thank you to John Axel Eriksson ([github.com/johnae](http://github.com/johnae)) for adding secure option and default, for the Zerigo DNS API.  
+
 
 ## Support
 
