@@ -10,8 +10,11 @@ begin
     gem.email = "tom@jackhq.com"
     gem.homepage = "http://github.com/twilson63/zerigo_dns"
     gem.authors = ["Tom Wilson"]
-    gem.add_dependency "activeresource"
+    gem.add_dependency "activeresource", ">= 3.0"
+    gem.add_development_dependency "rspec", ">= 2.0"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "rdoc", ">= 0"
+    gem.add_development_dependency "rcov", ">= 0"
     gem.files = FileList['example/*.rb'] + FileList['lib/**/*.rb'] + ['README.rdoc', 'LICENSE', 'VERSION.yml', 'Rakefile']
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -21,18 +24,18 @@ rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
-require 'spec/rake/spectask'
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-end
+require 'rspec/core/rake_task'
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
+desc 'Default: run specs.'
+task :default => :spec
+
+# 
+# require 'rake/testtask'
+# Rake::TestTask.new(:test) do |test|
+#   test.libs << 'lib' << 'test'
+#   test.pattern = 'test/**/test_*.rb'
+#   test.verbose = true
+# end
 
 begin
   require 'rcov/rcovtask'
@@ -47,12 +50,8 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
-
-task :default => :test
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
