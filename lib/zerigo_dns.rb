@@ -24,7 +24,7 @@ module Zerigo
       
       # fix load() so that it no longer clobbers @prefix_options
       # also fix bug exposed by reload() where attributes is effectively parsed twice, causing the first line to raise an exception the 2nd time
-      def load(attributes)
+      def load(attributes, remove_root = false)
         raise ArgumentError, "expected an attributes Hash, got #{attributes.inspect}" unless attributes.is_a?(Hash)
         new_prefix_options, attributes = split_options(attributes)
         @prefix_options.merge!(new_prefix_options)
