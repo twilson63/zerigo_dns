@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<zerigo_dns>, [">= 0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 2.0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
@@ -48,6 +49,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<zerigo_dns>, [">= 0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
@@ -62,6 +64,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<zerigo_dns>, [">= 0"])
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
