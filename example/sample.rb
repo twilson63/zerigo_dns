@@ -10,9 +10,9 @@ require 'zerigo_dns'
 # The 'password' is your API key and comes from the Preferences page
 # (Manage Account -> NS -> Preferences).
 
-Zerigo::NS::Base.user = 'you@email.com'
+Zerigo::DNS::Base.user = 'you@email.com'
 
-Zerigo::NS::Base.password = 'api_token'
+Zerigo::DNS::Base.password = 'api_token'
 
 
 

@@ -102,7 +102,7 @@ module Zerigo
           host.ttl        = ttl
           host.save
         else
-          # creatae
+          # create
           host = create(
             :zone_id    => zone, 
             :hostname   => hostname,
