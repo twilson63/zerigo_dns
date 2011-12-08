@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "zerigo_dns"
-  s.version = "1.4.1"
+  s.version = "1.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<zerigo_dns>, [">= 0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
