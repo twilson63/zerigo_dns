@@ -2,6 +2,8 @@
 
 Simple Gem that wraps around an active resource for the Zerigo DNS API
 
+[![Build Status](https://secure.travis-ci.org/twilson63/zerigo_dns.png)](http://travis-ci.org/twilson63/zerigo_dns)
+
 ## Install
 
     gem install zerigo_dns
