@@ -9,13 +9,13 @@ module Zerigo
     class Base < ActiveResource::Base
       
       class << self; attr_reader :secure end
-      
+        
       @secure=true
       self.site='https://ns.zerigo.com/api/1.1/'
       self.user = 'test@example.com'
       self.password = 'ca01ffae311a7854ea366b05cd02bd50'
       self.timeout = 5 # timeout after 5 seconds
-      
+      self.format = ActiveResource::Formats::XmlFormat
       
       def self.secure=(bool)
         @secure=bool

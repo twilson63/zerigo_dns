@@ -10,7 +10,7 @@ begin
     gem.email = "tom@jackhq.com"
     gem.homepage = "http://github.com/twilson63/zerigo_dns"
     gem.authors = ["Tom Wilson"]
-    gem.add_dependency "activeresource", ">= 3.0"
+    gem.add_dependency "activeresource", ">= 3.2.0"
     gem.add_development_dependency "rspec", ">= 2.0"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_development_dependency "rdoc", ">= 0"
