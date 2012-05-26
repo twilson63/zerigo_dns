@@ -5,20 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = "zerigo_dns"
-  s.version = "1.5.2"
+  s.version = "1.5.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
-  s.date = "2011-12-08"
+  s.date = "2012-05-26"
   s.description = "This gem is a resource wrapper of the example provide by zerigo dns"
   s.email = "tom@jackhq.com"
   s.extra_rdoc_files = [
-    "LICENSE",
-    "README.rdoc"
+    "LICENSE"
   ]
   s.files = [
     "LICENSE",
-    "README.rdoc",
     "Rakefile",
     "example/sample.rb",
     "lib/activeresource-ext.rb",
@@ -33,22 +31,22 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<zerigo_dns>, [">= 0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 2.0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 2.0"])
+      s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 2.0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_runtime_dependency(%q<activeresource>, [">= 3.0"])
+      s.add_runtime_dependency(%q<activeresource>, [">= 3.2.0"])
       s.add_development_dependency(%q<rspec>, [">= 2.0"])
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
     else
       s.add_dependency(%q<zerigo_dns>, [">= 0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
@@ -57,16 +55,15 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 2.0"])
+      s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<activeresource>, [">= 3.0"])
+      s.add_dependency(%q<activeresource>, [">= 3.2.0"])
       s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
     end
   else
     s.add_dependency(%q<zerigo_dns>, [">= 0"])
@@ -76,16 +73,15 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 2.0"])
+    s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<activeresource>, [">= 3.0"])
+    s.add_dependency(%q<activeresource>, [">= 3.2.0"])
     s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
   end
 end
 

@@ -2,6 +2,8 @@
 
 Simple Gem that wraps around an active resource for the Zerigo DNS API
 
+[![Build Status](https://secure.travis-ci.org/twilson63/zerigo_dns.png)](http://travis-ci.org/twilson63/zerigo_dns)
+
 ## Install
 
     gem install zerigo_dns
@@ -32,7 +34,21 @@ Thank you to John Axel Eriksson ([github.com/johnae](http://github.com/johnae)) 
 
 ## Support
 
-    http://support.jackrussellsoftware.com
+    [https://github.com/twilson63/zerigo_dns](https://github.com/twilson63/zerigo_dns)
     
-    create a ticket
-    
+    create an issue
+
+## Credit goes to Zerigo DNS
+
+    Copyright 2009 Zerigo, Inc.  See MIT-LICENSE for license information.
+    Visit http://www.zerigo.com/docs/managed-dns for updates and documentation.
+
+    I just put there sample code into a gem library for deployment ease. And chef
+    integration.
+
+    If you have any questions contact zerigo_dns_gem@jackhq.com
+
+
+## Copyright
+
+    Copyright 2009 Zerigo, Inc.  See MIT-LICENSE for license information.

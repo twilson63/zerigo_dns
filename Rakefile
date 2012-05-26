@@ -14,7 +14,6 @@ begin
     gem.add_development_dependency "rspec", ">= 2.0"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_development_dependency "rdoc", ">= 0"
-    gem.add_development_dependency "rcov", ">= 0"
     gem.files = FileList['example/*.rb'] + FileList['lib/**/*.rb'] + ['README.rdoc', 'LICENSE', 'VERSION.yml', 'Rakefile']
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -27,6 +26,7 @@ end
 require 'rspec/core/rake_task'
 
 desc 'Default: run specs.'
+RSpec::Core::RakeTask.new(:spec)
 task :default => :spec
 
 # require 'rdoc/task'
