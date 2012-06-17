@@ -25,7 +25,7 @@ Thats it, you should now have a host and url www.happyplace.com pointing to 10.1
 
 ## How to test
 
-    spec ./spec
+    spec spec
     
 ## Thanks for contributing
 
