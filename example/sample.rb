@@ -12,8 +12,7 @@ require 'zerigo_dns'
 
 Zerigo::DNS::Base.user = 'you@email.com'
 
-Zerigo::DNS::Base.password = 'api_token'
-
+Zerigo::DNS::Base.api_key = 'api_token'
 
 # Note: This example assumes that there is at least one domain/zone already
 #       existing for the above referenced account.

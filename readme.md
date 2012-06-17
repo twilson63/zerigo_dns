@@ -13,7 +13,7 @@ Simple Gem that wraps around an active resource for the Zerigo DNS API
     require 'zerigo_dns'
     
     Zerigo::DNS::Base.user = 'you@email.com'
-    Zerigo::DNS::Base.password = 'yourtokengoeshere'
+    Zerigo::DNS::Base.api_key = 'yourtokengoeshere'
     
     # Find or create domain
     my_zone = Zerigo::DNS::Zone.find_or_create('happyplace.com')
@@ -29,7 +29,10 @@ Thats it, you should now have a host and url www.happyplace.com pointing to 10.1
     
 ## Thanks for contributing
 
-Thank you to John Axel Eriksson ([github.com/johnae](http://github.com/johnae)) for adding secure option and default, for the Zerigo DNS API.  
+Thank you to John Axel Eriksson ([github.com/johnae](http://github.com/johnae)) for adding secure option and default, for the Zerigo DNS API.
+
+Thank you to Anthony Scalisi
+([github.com/scalp42](https://github.com/scalp42)) for requesting api change: self.api_key instead self.password
 
 
 ## Support
